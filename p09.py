@@ -1,6 +1,5 @@
 # Part 1
 from itertools import combinations
-from re import sub
 
 
 with open('p09.txt') as f:
