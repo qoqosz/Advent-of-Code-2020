@@ -18,7 +18,7 @@ def play(starting_nums):
             if len(history[val]) <= 1:
                 val = 0
             else:
-                val = history[val][-1] - history[val][-2]
+                val = history[val][-1] - history[val].pop(0)
 
         history[val].append(turn)
         turn += 1
