@@ -41,7 +41,8 @@ def cycle(space):
         check(p, space, updates)
 
         for n in get_neighbours(p):
-            check(n, space, updates)
+            if n not in updates:
+                check(n, space, updates)
 
     space.update(updates)
 
