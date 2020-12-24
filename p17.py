@@ -35,14 +35,16 @@ def check(p, space, updates):
 
 
 def cycle(space):
-    updates = {}
+    updates, visited = {}, set()
 
     for p in space:
         check(p, space, updates)
 
         for n in get_neighbours(p):
-            if n not in updates:
+            if n not in visited:
                 check(n, space, updates)
+                visited.update([n])
+
 
     space.update(updates)
 
