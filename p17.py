@@ -26,12 +26,10 @@ def n_neighbours(p):
 def check(p, space, updates):
     n = n_neighbours(p)
 
-    if space.get(p, '.') == '#':
-        if n not in [2, 3]:
-            updates[p] = '.'
-    else:
-        if n == 3:
-            updates[p] = '#'
+    if space.get(p, '.') == '#' and n not in [2, 3]:
+        updates[p] = '.'
+    elif n == 3:
+        updates[p] = '#'
 
 
 def cycle(space):
@@ -44,7 +42,6 @@ def cycle(space):
             if n not in visited:
                 check(n, space, updates)
                 visited.update([n])
-
 
     space.update(updates)
 

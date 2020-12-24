@@ -1,0 +1,5 @@
+.vscode/*
+__pycache__/*
+.python-version
+perf.sh
+*test.txt
